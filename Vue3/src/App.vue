@@ -12,6 +12,7 @@ const visibleCount = ref(10); // 可见的项目数量
 const bufferCount = 2; // 缓冲区项目数量
 const scrollTop = ref(0); // 滚动位置
 
+
 // 计算开始索引和结束索引
 const startIndex = computed(() => {
   const start = Math.floor(scrollTop.value / itemHeight);
