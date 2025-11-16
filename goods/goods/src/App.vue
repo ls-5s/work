@@ -541,9 +541,7 @@ const downloadAllImages = () => {
         <p v-if="errors.api" class="api-error-message">{{ errors.api }}</p>
 
         <!-- API Key配置状态提示 -->
-        <p v-if="!isApiKeyConfigured" class="config-warning">
-          系统提示：API Key 未正确配置，请在 .env 文件中设置有效的 VITE_DASHSCOPE_API_KEY
-        </p>
+
 
         <!-- 生成按钮 -->
         <div class="generate-button-container">
