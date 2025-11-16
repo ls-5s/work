@@ -1,44 +1,14 @@
-# goods
+### 项目解释  
+该项目是一个**商品图像智能生成系统**，主要功能是帮助用户快速生成电商平台所需的商品图片。用户可以上传商品白底图，并输入商品相关信息（如标题、卖点、规格参数、描述等），系统会基于这些输入，通过AI模型自动生成3张不同风格的主图（800×800px）和5张不同角度/卖点的详情图（宽度750px），生成后支持单张下载或批量下载。
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+### 调用的AI大模型  
+项目中调用的是**阿里云DashScope平台**的**wan2.5-t2i-preview**模型，这是一个文本到图像（Text-to-Image）生成模型。  
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+代码中明确提到了模型配置：  
+```javascript
+// 模型配置
+const MODEL_NAME = 'wan2.5-t2i-preview';
+```  
 
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-pnpm dev
-```
-
-### Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+同时，项目通过阿里云DashScope的API进行调用，相关配置包括API密钥（`DASHSCOPE_API_KEY`）和API接口地址，用于创建图像生成任务和查询任务状态。
