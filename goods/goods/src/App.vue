@@ -30,7 +30,7 @@ const errors = ref({
 // 修改后
 const DASHSCOPE_API_KEY = import.meta.env.VITE_DASHSCOPE_API_KEY ||'';
 
-console.log('DASHSCOPE_API_KEY:', DASHSCOPE_API_KEY);
+// console.log('DASHSCOPE_API_KEY:', DASHSCOPE_API_KEY);
 // 阿里云DASHSCOPE API配置（使用相对路径以便通过代理）
 const dashscopeConfig = {
   apiKey: DASHSCOPE_API_KEY,
